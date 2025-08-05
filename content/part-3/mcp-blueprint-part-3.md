@@ -1,5 +1,5 @@
 ---
-title: "The Full MCP Blueprint: Part C - Building a Custom MCP Client from Scratch"
+title: "The Full MCP Blueprint: Part 3 - Building a Custom MCP Client from Scratch"
 subtitle: "Model context protocol crash course—Part 3"
 authors:
   - name: Avi Chawla
@@ -8,7 +8,7 @@ date: "June 8, 2025"
 source: "Daily Dose of Data Science"
 ---
 
-# The Full MCP Blueprint: Part C - Building a Custom MCP Client from Scratch
+# The Full MCP Blueprint: Part 3 - Building a Custom MCP Client from Scratch
 
 _Model context protocol crash course—Part 3._
 
@@ -42,8 +42,8 @@ We understood how the client-server capability exchange works, and why MCP is a 
 :class: note
 If you haven't yet gone through the previous parts, we strongly recommend doing that first before you read further. It'll give you the necessary grounding to fully benefit from what's coming next. Find them here:
 
-- [The Full MCP Blueprint: Part A - Foundations & Architecture](../part-a/mcp-blueprint-part-a.md)
-- [The Full MCP Blueprint: Part B - Capabilities & Protocols](../part-b/mcp-blueprint-part-b.md)
+- [The Full MCP Blueprint: Part 1 - Background, Foundations, Architecture, and Practical Usage](../part-1/mcp-blueprint-part-1.md)
+- [The Full MCP Blueprint: Part 2 - Capabilities, Protocols, and Implementation](../part-2/mcp-blueprint-part-2.md)
 ```
 
 In this part, we'll shift our focus toward a more practical implementation and bring clarity to several key ideas and concepts covered so far in the first two parts.

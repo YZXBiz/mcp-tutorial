@@ -1,5 +1,5 @@
 ---
-title: "The Full MCP Blueprint: Part B - Capabilities, Protocols, and Implementation"
+title: "The Full MCP Blueprint: Part 2 - Capabilities, Protocols, and Implementation"
 subtitle: "Model context protocol crash course—Part 2"
 authors:
   - name: Avi Chawla
@@ -8,7 +8,7 @@ date: "June 1, 2025"
 source: "Daily Dose of Data Science"
 ---
 
-# The Full MCP Blueprint: Part B - Capabilities, Protocols, and Implementation
+# The Full MCP Blueprint: Part 2 - Capabilities, Protocols, and Implementation
 
 _Model context protocol crash course—Part 2._
 
@@ -47,29 +47,29 @@ graph TB
         A --> C
         A --> D
     end
-    
+
     subgraph "External Services"
         E["MCP Server 1<br/>(File System)"]
         F["MCP Server 2<br/>(Database)"]
         G["MCP Server 3<br/>(Web API)"]
     end
-    
+
     B <--> E
     C <--> F
     D <--> G
-    
+
     subgraph "Capabilities"
         H["Tools"]
-        I["Resources"] 
+        I["Resources"]
         J["Prompts"]
         K["Sampling"]
     end
-    
+
     E --> H
     F --> I
     G --> J
     G --> K
-    
+
     style A fill:#ff9999
     style B fill:#ffcc99
     style C fill:#ffcc99
@@ -85,7 +85,7 @@ Now, in Part 2, we'll build upon that foundation and get hands-on with MCP capab
 
 ```{admonition} Prerequisites
 :class: note
-If you haven't read the previous part yet, we highly recommend doing so before reading ahead: [The Full MCP Blueprint: Part A](../part-a/mcp-blueprint-part-a.md)
+If you haven't read the previous part yet, we highly recommend doing so before reading ahead: [The Full MCP Blueprint: Part 1](../part-1/mcp-blueprint-part-1.md)
 ```
 
 Let's dive in!
@@ -844,18 +844,18 @@ graph TB
         F["Changes require<br/>app updates"]
         G["Tightly coupled<br/>to application"]
     end
-    
+
     subgraph "MCP Approach"
         H["AI Host"] --> I["MCP Client"]
         I <--> J["MCP Server 1<br/>(Weather Service)"]
         I <--> K["MCP Server 2<br/>(Math Tools)"]
         I <--> L["MCP Server 3<br/>(Email Service)"]
-        
+
         J --> M["Dynamic Discovery"]
         K --> N["Protocol Standard"]
         L --> O["Modular Design"]
     end
-    
+
     style A fill:#ff9999
     style H fill:#99ff99
     style B fill:#ffcccc

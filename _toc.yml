@@ -4,9 +4,21 @@
 format: jb-book
 root: content/intro
 chapters:
-  - file: content/part-a/mcp-blueprint-part-a
-    title: "Part A: Foundations & Architecture"
-  - file: content/part-b/mcp-blueprint-part-b
-    title: "Part B: Capabilities & Protocols"
-  - file: content/part-c/mcp-blueprint-part-c
-    title: "Part C: Building Custom Clients"
+  - file: content/part-1/mcp-blueprint-part-1
+    title: "Part 1: Background, Foundations, Architecture, and Practical Usage"
+  - file: content/part-2/mcp-blueprint-part-2
+    title: "Part 2: Capabilities, Protocols, and Implementation"
+  - file: content/part-3/mcp-blueprint-part-3
+    title: "Part 3: Building a Custom MCP Client from Scratch"
+  - file: content/part-4/mcp-blueprint-part-4
+    title: "Part 4: Building a Full-Fledged MCP Workflow using Tools, Resources, and Prompts"
+  - file: content/part-5/mcp-blueprint-part-5
+    title: "Part 5: Integrating Sampling into MCP Workflows"
+  - file: content/part-6/mcp-blueprint-part-6
+    title: "Part 6: Testing, Security and Sandboxing in MCPs (Part A)"
+  - file: content/part-7/mcp-blueprint-part-7
+    title: "Part 7: Testing, Security, and Sandboxing in MCPs (Part B)"
+  - file: content/part-8/mcp-blueprint-part-8
+    title: "Part 8: Practical MCP Integration with 4 Popular Agentic Frameworks"
+  - file: content/part-9/mcp-blueprint-part-9
+    title: "Part 9: Building a Full-Fledged Research Assistant with MCP and LangGraph"

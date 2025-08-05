@@ -1,5 +1,5 @@
 ---
-title: "The Full MCP Blueprint: Background, Foundations, Architecture, and Practical Usage (Part A)"
+title: "The Full MCP Blueprint: Part 1 - Background, Foundations, Architecture, and Practical Usage"
 subtitle: "Model context protocol crash course—Part 1"
 authors:
   - name: Avi Chawla
@@ -8,7 +8,7 @@ date: "May 25, 2025"
 source: "Daily Dose of Data Science"
 ---
 
-# The Full MCP Blueprint: Background, Foundations, Architecture, and Practical Usage (Part A)
+# The Full MCP Blueprint: Part 1 - Background, Foundations, Architecture, and Practical Usage
 
 _Model context protocol crash course—Part 1._
 
@@ -322,11 +322,11 @@ graph TD
         A1["AI Model 1"] --> B1["Custom Integration 1-1"]
         A1 --> B2["Custom Integration 1-2"]
         A1 --> B3["Custom Integration 1-3"]
-        
+
         A2["AI Model 2"] --> B4["Custom Integration 2-1"]
         A2 --> B5["Custom Integration 2-2"]
         A2 --> B6["Custom Integration 2-3"]
-        
+
         B1 --> C1["Tool 1"]
         B4 --> C1
         B2 --> C2["Tool 2"]
@@ -334,7 +334,7 @@ graph TD
         B3 --> C3["Tool 3"]
         B6 --> C3
     end
-    
+
     subgraph "With MCP (M+N Solution)"
         D1["AI Host 1<br/>(MCP Client)"] --> E["MCP Protocol"]
         D2["AI Host 2<br/>(MCP Client)"] --> E
@@ -342,7 +342,7 @@ graph TD
         E --> F2["MCP Server 2<br/>(Tool 2)"]
         E --> F3["MCP Server 3<br/>(Tool 3)"]
     end
-    
+
     style A1 fill:#ff9999
     style A2 fill:#ff9999
     style D1 fill:#99ff99
@@ -353,7 +353,7 @@ graph TD
     style F3 fill:#99ccff
 ```
 
-*MCP transforms integration complexity from M×N to M+N by acting as a universal interface between AI applications and tools. An AI Host only needs to implement MCP once to access many tools, and tool providers implement MCP once to serve many AI clients. The result is standardization and scalability (think "unified APIs" instead of bespoke integrations).*
+_MCP transforms integration complexity from M×N to M+N by acting as a universal interface between AI applications and tools. An AI Host only needs to implement MCP once to access many tools, and tool providers implement MCP once to serve many AI clients. The result is standardization and scalability (think "unified APIs" instead of bespoke integrations)._
 
 - **On the left (pre-MCP):** every model had to wire into every tool.
 - **On the right (with MCP):** each model and tool connects to the MCP layer, drastically simplifying connections. You can also relate this to the translator example we discussed earlier.
@@ -423,29 +423,29 @@ graph TB
         A --> C
         A --> D
     end
-    
+
     subgraph "External Services"
         E["MCP Server 1<br/>(File System)"]
         F["MCP Server 2<br/>(Database)"]
         G["MCP Server 3<br/>(Web API)"]
     end
-    
+
     B <--> E
     C <--> F
     D <--> G
-    
+
     subgraph "Capabilities"
         H["Tools"]
-        I["Resources"] 
+        I["Resources"]
         J["Prompts"]
         K["Sampling"]
     end
-    
+
     E --> H
     F --> I
     G --> J
     G --> K
-    
+
     style A fill:#ff9999
     style B fill:#ffcc99
     style C fill:#ffcc99
@@ -455,7 +455,7 @@ graph TB
     style G fill:#99ccff
 ```
 
-*An illustration of MCP's architecture: The Host (AI application) contains an MCP Client component for each connection. Each Client talks to an external MCP Server, which provides certain capabilities (tools, etc.). This modular design lets a single AI app interface with multiple external resources via MCP.*
+_An illustration of MCP's architecture: The Host (AI application) contains an MCP Client component for each connection. Each Client talks to an external MCP Server, which provides certain capabilities (tools, etc.). This modular design lets a single AI app interface with multiple external resources via MCP._
 
 Let's understand them one by one in detail since we have seen people get confused at times especially between the host and the client.
 
