@@ -5,6 +5,8 @@ format: jb-book
 root: content/intro
 chapters:
   - file: content/part-a/mcp-blueprint-part-a
-  - file: examples/markdown
-  - file: examples/notebooks
-  - file: examples/markdown-notebooks
+    title: "Part A: Foundations & Architecture"
+  - file: content/part-b/mcp-blueprint-part-b
+    title: "Part B: Capabilities & Protocols"
+  - file: content/part-c/mcp-blueprint-part-c
+    title: "Part C: Building Custom Clients"
