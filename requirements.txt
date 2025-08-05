@@ -1,3 +1,4 @@
 jupyter-book
-matplotlib
-numpy
+beautifulsoup4
+markdownify
+sphinxcontrib-mermaid
