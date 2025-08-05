@@ -36,13 +36,50 @@ We then introduced the core motivation behind MCP: solving the M×N integration 
 
 Finally, we unpacked the MCP architecture, clarifying the roles of the Host (AI app), Client (protocol handler), and Server (tool provider) and explained how they interact through a standardized, modular system.
 
-```{figure} /content/resources/images/mcp-architecture.png
-:name: mcp-architecture
-:alt: MCP Architecture Diagram
-:align: center
+```{mermaid}
+graph TB
+    subgraph "Host (AI Application)"
+        A["LLM/AI Model"]
+        B["MCP Client 1"]
+        C["MCP Client 2"]
+        D["MCP Client 3"]
+        A --> B
+        A --> C
+        A --> D
+    end
+    
+    subgraph "External Services"
+        E["MCP Server 1<br/>(File System)"]
+        F["MCP Server 2<br/>(Database)"]
+        G["MCP Server 3<br/>(Web API)"]
+    end
+    
+    B <--> E
+    C <--> F
+    D <--> G
+    
+    subgraph "Capabilities"
+        H["Tools"]
+        I["Resources"] 
+        J["Prompts"]
+        K["Sampling"]
+    end
+    
+    E --> H
+    F --> I
+    G --> J
+    G --> K
+    
+    style A fill:#ff9999
+    style B fill:#ffcc99
+    style C fill:#ffcc99
+    style D fill:#ffcc99
+    style E fill:#99ccff
+    style F fill:#99ccff
+    style G fill:#99ccff
+```
 
 An illustration of MCP's architecture: The Host (AI application) contains an MCP Client component for each connection. Each Client talks to an external MCP Server, which provides certain capabilities (tools, etc.). This modular design lets a single AI app interface with multiple external resources via MCP.
-```
 
 Now, in Part 2, we'll build upon that foundation and get hands-on with MCP capabilities, communication protocols, and real-world implementation.
 
@@ -797,13 +834,41 @@ We'll understand this topic better in Part 3 of this course, when we build a cus
 
 Before MCPs became mainstream (or popular like they are right now), most AI workflows relied on traditional function calling for tools.
 
-```{figure} /content/resources/images/function-calling-vs-mcp.png
-:name: function-calling-vs-mcp
-:alt: Function Calling vs MCP Comparison
-:align: center
-
-Here's a visual that explains Function calling & MCP
+```{mermaid}
+graph TB
+    subgraph "Traditional Function Calling"
+        A["AI Application"] --> B["Function Registry"]
+        B --> C["Function 1<br/>(Weather)"]
+        B --> D["Function 2<br/>(Calculator)"]
+        B --> E["Function 3<br/>(Email)"]
+        F["Changes require<br/>app updates"]
+        G["Tightly coupled<br/>to application"]
+    end
+    
+    subgraph "MCP Approach"
+        H["AI Host"] --> I["MCP Client"]
+        I <--> J["MCP Server 1<br/>(Weather Service)"]
+        I <--> K["MCP Server 2<br/>(Math Tools)"]
+        I <--> L["MCP Server 3<br/>(Email Service)"]
+        
+        J --> M["Dynamic Discovery"]
+        K --> N["Protocol Standard"]
+        L --> O["Modular Design"]
+    end
+    
+    style A fill:#ff9999
+    style H fill:#99ff99
+    style B fill:#ffcccc
+    style I fill:#ccffcc
+    style C fill:#ccccff
+    style D fill:#ccccff
+    style E fill:#ccccff
+    style J fill:#99ccff
+    style K fill:#99ccff
+    style L fill:#99ccff
 ```
+
+Here's a visual comparison between traditional Function calling and MCP approaches
 
 Function calling enables LLMs to execute predefined functions based on user inputs. In this approach, developers define specific functions, and the LLM determines which function to invoke by analyzing the user's prompt. The process involves:
 

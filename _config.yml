@@ -40,8 +40,23 @@ html:
   use_download_button: true
   home_page_in_navbar: false
 
+# Configure MyST extensions
+parse:
+  myst_enable_extensions:
+    - colon_fence
+    - deflist
+    - dollarmath
+    - html_image
+    - linkify
+    - replacements
+    - smartquotes
+    - substitution
+    - tasklist
+
 # Sphinx configuration
 sphinx:
+  extra_extensions:
+    - sphinxcontrib.mermaid
   config:
     html_theme_options:
       repository_url: https://github.com/YZXBiz/mcp-tutorial

@@ -697,13 +697,43 @@ if calls:
 
 If tools are required, the invocation logic goes inside the for-loop declared above (`for call in calls_list`):
 
-```{figure} /content/resources/images/mcp-flow-diagram.png
-:name: mcp-flow-diagram
-:alt: MCP Flow Diagram
-:align: center
+```{mermaid}
+sequenceDiagram
+    participant User
+    participant Host as AI Host
+    participant Client as MCP Client
+    participant LLM
+    participant Server as MCP Server
+
+    User->>Host: Query
+    Host->>Client: Get available tools
+    Client->>Server: list_tools()
+    Server-->>Client: Available tools
+    Client-->>Host: Tool schemas
+
+    Host->>LLM: Query + Available tools
+    LLM-->>Host: Tool call request
+
+    Host->>User: Request permission
+    User-->>Host: Approve/Deny
+
+    alt Permission granted
+        Host->>Client: Execute tool
+        Client->>Server: call_tool(name, args)
+        Server-->>Client: Tool result
+        Client-->>Host: Result
+
+        Host->>LLM: Original query + Tool results
+        LLM-->>Host: Final response
+        Host-->>User: Complete answer
+    else Permission denied
+        Host->>LLM: Query + "Tool denied"
+        LLM-->>Host: Alternative response
+        Host-->>User: Response without tool
+    end
+```
 
 Next up, recall from the MCP flow above:
-```
 
 We have just completed step 3 above and now we need to move to Step 4, which is user's approval. We do that below:
 

@@ -1,6 +1,6 @@
 # MCP Tutorial: The Complete Guide to Model Context Protocol
 
-![MCP Tutorial](content/resources/images/logo.png)
+🤖 **MCP Tutorial**
 
 A comprehensive, hands-on tutorial covering the Model Context Protocol (MCP) - the USB-C for AI applications.
 
