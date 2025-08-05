@@ -1,0 +1,51 @@
+# Book settings
+# Learn more at https://jupyterbook.org/customize/config.html
+
+title: "MCP Tutorial: The Complete Guide to Model Context Protocol"
+author: "Avi Chawla & Akshay Pachaar"
+logo: content/resources/images/logo.png
+
+# Short description of the book
+description: >
+  A comprehensive, hands-on tutorial covering the Model Context Protocol (MCP) - 
+  the USB-C for AI applications. Learn theory and practical implementation.
+
+# Force re-execution of notebooks on each build.
+# See https://jupyterbook.org/content/execute.html
+execute:
+  execute_notebooks: cache
+  timeout: 100
+
+# Define the name of the latex output file for PDF builds
+latex:
+  latex_documents:
+    targetname: mcp-tutorial.tex
+
+# Add a bibtex file so that we can create citations
+bibtex_bibfiles:
+  - content/resources/references.bib
+
+# Information about where the book exists on the web
+repository:
+  url: https://github.com/YZXBiz/mcp-tutorial # Your repository URL
+  path_to_book: "" # Book is at repository root
+  branch: main # Default branch name
+
+# Add GitHub buttons to your book
+# See https://jupyterbook.org/customize/config.html#add-a-link-to-your-repository
+html:
+  use_issues_button: true
+  use_repository_button: true
+  use_edit_page_button: true
+  use_download_button: true
+  home_page_in_navbar: false
+
+# Sphinx configuration
+sphinx:
+  config:
+    html_theme_options:
+      repository_url: https://github.com/YZXBiz/mcp-tutorial
+      use_repository_button: true
+      use_issues_button: true
+      use_edit_page_button: true
+      use_download_button: true

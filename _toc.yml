@@ -1,0 +1,10 @@
+# Table of Contents
+# Learn more at https://jupyterbook.org/customize/toc.html
+
+format: jb-book
+root: content/intro
+chapters:
+  - file: content/part-a/mcp-blueprint-part-a
+  - file: examples/markdown
+  - file: examples/notebooks
+  - file: examples/markdown-notebooks
